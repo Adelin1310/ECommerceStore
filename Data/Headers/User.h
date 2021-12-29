@@ -2,13 +2,22 @@
 
 namespace Store
 {
-    class User{
-        private:
-        static unsigned int overallID;
-        const unsigned int id;
-        char* Name;
-        char* Email;
-        char* Password;
-        
-    }
+    static unsigned int overallID = 0;
+    class User
+    {
+    private:
+        unsigned int id;
+        char *UserName;
+        char *Email;
+        char *Password;
+        char *Phone;
+
+    public:
+        char *GetEmail();
+        char *GetPhoneNumber();
+        void ChangePassword(char *oldPassword, char *newPassword);
+        void ChangeUserName(char *password, char *newUsername);
+        User(char *userName, char *password, char *email, char *phone, bool &succes);
+        ~User();
+    };
 } // namespace Store

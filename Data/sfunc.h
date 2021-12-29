@@ -1,8 +1,9 @@
 #pragma once
-#include <iostream>
+#include "./Headers/User.h"
 namespace Store
 {
-    static void Initialize(){
-        std::cout<<"Initialized!";
-    }
+    void Initialize();
+    void Menu();
+    bool LogIn(char* userName, char* password);
+    bool SignUp(char* userName, char* password, char* email, char* phone);
 } // namespace Store

@@ -1,7 +1,14 @@
 #pragma once
-
+#include "./Headers/User.h"
+#include <fstream>
 namespace Security
 {
+    std::ofstream usersDB_w("../App/Database/users.dbf", std::ios_base::app);
+    std::ifstream usersDB_r("../App/Database/users.dbf", std::ios_base::in);
     const char* secret = "secret-key";
-    static std:: Hash(char* password);
+    bool CheckUserAvailability(char* userName, char* email, char* phone);
+    char* GetUserHash(const unsigned int userId);
+    bool CompareHash(char* Hash,unsigned int userId);
+    char* Hash(char* password, bool conversion_type);
+
 } // namespace Security
