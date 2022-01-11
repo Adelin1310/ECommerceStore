@@ -19,7 +19,7 @@ char *Security::Hash(char *pass, bool conversion_type)
     else
     {
         for (unsigned int i = 0; i < strlen(pass); i++)
-            hashIntArr[i] = pass[i] + hashAux;
+            hashIntArr[i] = pass[i] - hashAux;
     }
     for (unsigned int i = 0; i < strlen(pass); i++)
         HASH[i] = hashIntArr[i];
@@ -85,7 +85,7 @@ bool Security::CheckUserAvailability(char* userName, char* email, char* phone){
 char* Security::GetUserHash(unsigned int userId){
     char* user = GetUser(userId);
     
-    char aux[strlen(user) + 1];
+    char* aux = new char[strlen(user) + 1];
     strcpy(aux, user);
     char* aux2 = strtok(aux, "X{");
     unsigned int i = 2;

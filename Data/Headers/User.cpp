@@ -16,7 +16,7 @@ Store::User::User(char* userName, char* password, char* email, char* phone,bool 
     }
 }
 
-Store::User::~User(){delete this;}
+Store::User::~User(){}
 
 void Store::User::ChangePassword(char* oldPassword, char* newPassword){
     if(Security::CompareHash(Security::Hash(oldPassword, 1), id))
