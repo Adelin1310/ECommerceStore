@@ -81,12 +81,13 @@ bool Store::SignUp(char *userName, char *password, char *email, char *phone)
     bool success = false;
     User newUser = Store::User(userName, password, email, phone, success);
     if(success == false)
-        newUser.~User();
+        std::cout<<"Unknown error at registration";
     return success;
 }
 
 bool Store::LogIn(char *userName, char *password)
 {
+    
     return true;
 }
 
